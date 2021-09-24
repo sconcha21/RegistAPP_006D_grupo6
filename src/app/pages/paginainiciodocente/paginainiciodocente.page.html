@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="white">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle class="ion-text-center">Bienvenido Docente</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content class="ion-text-center">
+      Nos alegra verte nuevamente
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle class="ion-text-center">Clase</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content class="ion-text-center">
+      Curso Programación
+    </ion-card-content>
+    
+    <ion-item>
+      <ion-icon name="people-sharp"></ion-icon>
+      <ion-label> Asistencia Curso</ion-label>
+      <ion-button color="success" fill="outline" slot="end">Ver</ion-button>
+    </ion-item>
+  </ion-card>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+
+      <ion-tab-button tab="codigo-qr">
+        <ion-icon name="map"></ion-icon>
+        <ion-label>Crear QR</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="about">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>About</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button expand="block" [routerLink]="['/home']">
+        <ion-alert-controller></ion-alert-controller>
+        <ion-icon name="log-out"></ion-icon>
+        <ion-label>Cerrar Sesión</ion-label>
+      </ion-tab-button>
+
+      <script>
+        const button = document.querySelector('ion-tab-button');
+        button.addEventListener('click', AlertaCerrarSesion);
+    
+        async function AlertaCerrarSesion() {
+        const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'Alerta',
+        subHeader: 'Cerrar Sesión',
+        message: '¿Seguro que quieres salir?',
+        buttons: ['Cancelar', 'Ok']
+        });
+
+       await alert.present();
+       }
+       
+      </script>
+
+      
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Restablecer Contraseña</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscrenn]="true" color="white">
+
+  <ion-content color="white">
+    <ion-card>
+     <ion-card-header>
+       <ion-card-subtitle class="ion-text-center">¿Olvidaste tu contraseña?</ion-card-subtitle>
+     </ion-card-header>
+     <ion-card-content class="ion-text-center">
+       Te enviaremos una contraseña temporal al correo para que puedas iniciar sesión y puedas crear tu nueva contraseña , solo debes ingresar tu correo electrónico y luego pincha
+       el botón Restablecer. 
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-button class="ion-margin-top" type="submit" expand="block" color="success"
+      [routerLink]="['/home']">
+     Restablecer
+    </ion-button>
+     </ion-card-content>
+   </ion-card>
+</ion-content>

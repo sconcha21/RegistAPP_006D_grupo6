@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Sistema de Asistencia</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscrenn]="true" color="white">
+
+  <div class="titulo">Ingrese Credenciales Alumno</div>
+
+  <div class="contenido">
+    
+    <form  [formGroup]="persona" (ngSubmit)="grabar()" >
+      <ion-item>
+        <ion-label position="floating">Nombre Usuario: </ion-label>
+        <ion-input formControlName="elnombreUsuario" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña: </ion-label>
+        <ion-input formControlName="laContrasena" ></ion-input>
+      </ion-item>
+    </form>
+  </div>
+
+  <div class="btnalumno">
+    <ion-button (click)="grabar()" class="ion-margin-top" type="submit" expand="block" color="primary"
+      [routerLink]="['/paginainicioalumno']">Acceder</ion-button>
+      <label for="" class="ion-text-center">¿Olvidaste tu contraseña?<ion-router-link href="/restablecer-contrasena"  color="medium"> Pincha aquí</ion-router-link></label>
+  </div>
+</ion-content>
